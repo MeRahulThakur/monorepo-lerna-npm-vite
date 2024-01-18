@@ -4,6 +4,15 @@
   "workspaces": [
     "packages/*"
   ],
+  "scripts": {
+    "copyPackageJSON": "node copy-script.js",
+    "pack": "cd build && npm pack",
+    "client": "npx lerna run dev --scope=@npm-lerna-monorepo/client",
+    "build": "npx lerna run build --scope=@npm-lerna-monorepo/common",
+    "build1": "npx lerna run rollup-build --scope=@npm-lerna-monorepo/common",
+    "install_common": "cd packages\\common && npm install",
+    "install_client": "cd packages\\client && npm install" 
+  },
   "devDependencies": {
     "@types/node": "^20.10.5",
     "lerna": "^8.0.1",
